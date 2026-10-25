@@ -1,0 +1,60 @@
+[project]
+name = "devorganizer"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.15,<3.16"
+
+dependencies = [
+    "boto3>=1.43.114",
+    "celery>=5.6.3",
+    "confluent-kafka>=2.16.0",
+    "django>=6.1.2",
+    "django-cacheops>=7.2",
+    "django-ninja>=1.7.1",
+    "django-storages>=1.14.6",
+    "flower>=2.2.0",
+    "httpx>=0.28.1",
+    "opentelemetry-api>=1.45.1",
+    "opentelemetry-exporter-otlp>=1.45.1",
+    "opentelemetry-instrumentation-botocore>=0.66b1",
+    "opentelemetry-instrumentation-celery>=0.66b1",
+    "opentelemetry-instrumentation-confluent-kafka>=0.66b1",
+    "opentelemetry-instrumentation-django>=0.66b1",
+    "opentelemetry-instrumentation-httpx>=0.66b1",
+    "opentelemetry-instrumentation-psycopg>=0.66b1",
+    "opentelemetry-instrumentation-redis>=0.66b1",
+    "opentelemetry-sdk>=1.45.1",
+    "orjson>=3.13.0",
+    "psycopg[binary]>=3.3.6",
+    "redis>=8.1.0",
+    "social-auth-app-django>=7.1.0",
+    "social-auth-core>=6.1.1",
+    "structlog>=26.1.0",
+    "uvicorn>=0.54.0",
+    "zeep>=4.3.3",
+]
+
+[project.scripts]
+devorganizer = "devorganizer:main"
+
+[build-system]
+requires = ["uv_build>=0.13.1,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+test = [
+    "factory-boy>=3.3.3",
+    "faker>=40.43.0",
+    "freezegun>=1.5.5",
+    "moto>=5.2.4",
+    "pytest>=9.1.1",
+    "pytest-asyncio>=1.4.0",
+    "pytest-django>=4.14.0",
+    "pytest-mock>=3.16.0",
+    "respx>=0.23.1",
+    "testcontainers>=4.15.0",
+]
+[tool.uv.build-backend]
+module-name = "devorganizer"
+module-root = "src"
